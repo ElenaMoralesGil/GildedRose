@@ -33,7 +33,9 @@ public class Tests
                                                       Quality = 20
                                                   },
                                               new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6},
-                                              new Item { Name = "Backstage passes to a TAFKAL80ETC concert",SellIn = 2, Quality =10}
+                                              new Item { Name = "Backstage passes to a TAFKAL80ETC concert",SellIn = 2, Quality =10},
+                                              new Item{Name = "Cool elixir", SellIn = -2, Quality = 3 }
+                                        
                                           }
 
                           };

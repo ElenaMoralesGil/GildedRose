@@ -29,6 +29,8 @@ public class GildedRoseTests
 
                                             new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
                                             new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 50},
+                                            new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = -10, Quality = 50},
+                                            
 
                                             // new Item{Name = "Conjured Mana Cake", SellIn = 2, Quality = 0},
                                             // new Item{Name = "Conjured Mana Cake", SellIn = 3, Quality = 6},

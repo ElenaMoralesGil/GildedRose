@@ -56,6 +56,13 @@ namespace GildedRose.Console
             return item.Quality;
         }
 
+        public int UpdateAgedBrieQuality(Item item){
+            if (item.Quality < 50)
+            {
+                item.Quality = item.Quality + 1;
+            }
+            return item.Quality;
+        }
         
         public void UpdateQuality()
         {
@@ -97,10 +104,7 @@ namespace GildedRose.Console
                     }
                     else
                     {
-                        if (item.Quality < 50)
-                        {
-                            item.Quality = item.Quality + 1;
-                        }
+                        item.Quality = UpdateAgedBrieQuality(item);
                     }
                 }
             }

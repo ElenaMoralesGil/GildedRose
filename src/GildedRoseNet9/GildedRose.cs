@@ -44,6 +44,7 @@ namespace GildedRose.Console
             {
                 item.Quality = item.Quality + 1;
             }
+            
             return item.Quality;
         }
 
@@ -60,50 +61,50 @@ namespace GildedRose.Console
         {
             foreach (Item item in Items)
             {   
-                if(item.Name != "Sulfuras, Hand of Ragnaros") {
-                    if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
+                if(item.Name == "Sulfuras, Hand of Ragnaros") continue;
+                
+                if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
+                {
+                    item.Quality = UpdateNormalQuality(item);
+                }
+                else
+                {
+                    if (item.Quality < 50)
                     {
-                        item.Quality = UpdateNormalQuality(item);
+                        item.Quality = item.Quality + 1;
+
+                        if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+                        {
+                            item.Quality = UpdateBackStageQuality(item);
+                        }
+                    }
+                }
+
+                item.SellIn = item.SellIn - 1;
+
+                if (item.SellIn < 0)
+                {
+                    if (item.Name != "Aged Brie")
+                    {
+                        if (item.Name != "Backstage passes to a TAFKAL80ETC concert")
+                        {
+                            item.Quality = UpdateNormalQuality(item);
+                        }
+                        else
+                        {
+                            item.Quality = item.Quality - item.Quality;
+                        }
                     }
                     else
                     {
                         if (item.Quality < 50)
                         {
                             item.Quality = item.Quality + 1;
-
-                            if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-                            {
-                                item.Quality = UpdateBackStageQuality(item);
-                            }
-                        }
-                    }
-
-                    item.SellIn = item.SellIn - 1;
-
-                    if (item.SellIn < 0)
-                    {
-                        if (item.Name != "Aged Brie")
-                        {
-                            if (item.Name != "Backstage passes to a TAFKAL80ETC concert")
-                            {
-                               item.Quality = UpdateNormalQuality(item);
-                            }
-                            else
-                            {
-                                item.Quality = item.Quality - item.Quality;
-                            }
-                        }
-                        else
-                        {
-                            if (item.Quality < 50)
-                            {
-                                item.Quality = item.Quality + 1;
-                            }
                         }
                     }
                 }
-            }     
-        // }
+            }
+        }
 
         //   public void UpdateQuality()
         // {
@@ -179,7 +180,7 @@ namespace GildedRose.Console
         //             }
         //         }
         //     }
-        }
+        // }
 
     }
 

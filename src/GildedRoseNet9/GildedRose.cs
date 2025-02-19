@@ -89,20 +89,13 @@ namespace GildedRose.Console
             foreach (Item item in Items)
             {   
                 if(item.Name == "Sulfuras, Hand of Ragnaros") continue;
-                
-                if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
-                {
-                    item.Quality = UpdateNormalQuality(item);
-                }
-                else
-                {
-                        if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-                        {
 
-                            item.Quality = UpdateBackStageQuality(item);
-                        } else {
-                            item.Quality = UpdateAgedBrieQuality(item);
-                        }
+                if(item.Name == "Aged Brie") {
+                    item.Quality = UpdateAgedBrieQuality(item);
+                } else if(item.Name == "Backstage passes to a TAFKAL80ETC concert") {
+                    item.Quality = UpdateBackStageQuality(item);
+                } else {
+                    item.Quality = UpdateNormalQuality(item);
                 }
 
                 item.SellIn = item.SellIn - 1;

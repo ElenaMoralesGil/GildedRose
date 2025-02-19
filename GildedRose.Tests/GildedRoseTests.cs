@@ -7,7 +7,7 @@ using NUnit.Framework.Constraints;
 namespace GildedRose.Tests;
 
 [UseReporter(typeof(DiffReporter))]
-public class Tests
+public class GildedRoseTests
 {
     [SetUp]
     public void Setup()
@@ -16,7 +16,7 @@ public class Tests
 
     
     [Test]
-    public void Test1()
+    public void GoldenMaster()
     {
          var app = new Program()
                           {

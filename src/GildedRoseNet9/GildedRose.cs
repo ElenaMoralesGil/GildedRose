@@ -47,6 +47,14 @@ namespace GildedRose.Console
             return item.Quality;
         }
 
+        public int UpdateNormalQuality(Item item){
+            if (item.Quality > 0)
+            {
+                item.Quality = item.Quality - 1;
+            }
+            return item.Quality;
+        }
+
         
         public void UpdateQuality()
         {
@@ -55,10 +63,7 @@ namespace GildedRose.Console
                 if(item.Name != "Sulfuras, Hand of Ragnaros") {
                     if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
                     {
-                        if (item.Quality > 0)
-                        {
-                            item.Quality = item.Quality - 1;
-                        }
+                        item.Quality = UpdateNormalQuality(item);
                     }
                     else
                     {
@@ -81,10 +86,7 @@ namespace GildedRose.Console
                         {
                             if (item.Name != "Backstage passes to a TAFKAL80ETC concert")
                             {
-                                if (item.Quality > 0)
-                                {
-                                        item.Quality = item.Quality - 1;
-                                }
+                               item.Quality = UpdateNormalQuality(item);
                             }
                             else
                             {

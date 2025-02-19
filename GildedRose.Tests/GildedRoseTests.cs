@@ -44,6 +44,8 @@ public class GildedRoseTests
                                             new Item {Name = "Elixir of the Mongoose", SellIn = 5, Quality = -1},  
                                             new Item {Name = "Elixir of the Mongoose", SellIn = -2, Quality = 5}, 
                                             new Item {Name = "Elixir of the Mongoose", SellIn = 0, Quality = 5},
+                                            new Item {Name = "Elixir of the Mongoose", SellIn = 4, Quality = 60},
+                                            new Item {Name = "Elixir of the Mongoose", SellIn = -1, Quality = 60},
 
                                             new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 15, Quality = 20},
                                             new Item { Name = "Backstage passes to a TAFKAL80ETC concert",SellIn = 2, Quality = 10 },
@@ -51,6 +53,8 @@ public class GildedRoseTests
                                             new Item{Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -2, Quality = 60 },
                                             new Item{Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -2, Quality = -1 },
                                             new Item{Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 7, Quality = 30 },
+                                            new Item{Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 30 },
+                                            new Item{Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 10, Quality = 30 },
                                           }
 
                           };

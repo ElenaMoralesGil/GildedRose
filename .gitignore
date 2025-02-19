@@ -231,4 +231,4 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-GildedRose.Tests/Tests.Test1.received.txt
+GildedRose.Tests/GildedRoseTests.GoldenMaster.received.txt

@@ -80,6 +80,7 @@ namespace GildedRose.Console
         public int SellIn { get; set; }
 
         public int Quality { get; set; }
+
     }
 
 }

@@ -123,4 +123,45 @@ public class GildedRoseShould
         app.Items[0].Quality.ShouldBe(expectedConjuredItem.Quality);
         app.Items[0].SellIn.ShouldBe(expectedConjuredItem.SellIn);
     }
+
+
+    [Test]
+    public void return_conjured_item_with_zero_quality_when_quality_is_four_but_sellIn_is_negative(){
+        Item conjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =-2, Quality = 4};
+        Item expectedConjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =-3, Quality = 0};
+        var app = new Program(){
+             Items = new List<Item> { conjuredItem}
+        };
+
+        app.UpdateQuality();
+        app.Items[0].Quality.ShouldBe(expectedConjuredItem.Quality);
+        app.Items[0].SellIn.ShouldBe(expectedConjuredItem.SellIn);
+    }
+
+    [Test]
+    public void return_conjured_item_quality_when_quality_is_negative(){
+        Item conjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =-2, Quality = -3};
+        Item expectedConjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =-3, Quality = -3};
+        var app = new Program(){
+             Items = new List<Item> { conjuredItem}
+        };
+
+        app.UpdateQuality();
+        app.Items[0].Quality.ShouldBe(expectedConjuredItem.Quality);
+        app.Items[0].SellIn.ShouldBe(expectedConjuredItem.SellIn);
+    }
+
+    [Test]
+    public void return_conjured_item_quality_decreased_normally_when_sellIn_is_zero(){
+        Item conjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =0, Quality = 10};
+        Item expectedConjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =-1, Quality = 8};
+        var app = new Program(){
+             Items = new List<Item> { conjuredItem}
+        };
+
+        app.UpdateQuality();
+        app.Items[0].Quality.ShouldBe(expectedConjuredItem.Quality);
+        app.Items[0].SellIn.ShouldBe(expectedConjuredItem.SellIn);
+    }
+
 }

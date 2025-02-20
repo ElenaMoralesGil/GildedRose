@@ -9,17 +9,6 @@ public class QualityUpdater{
         return strategy.Update(item);
     }
 
-    // public UpdateStrategy GetStrategy(Item item){
-
-        // switch(item.Name) {
-        //     case "Aged Brie":
-        //         return new AgedBrieQualityUpdaterStrategy();     
-        //     case "Backstage passes to a TAFKAL80ETC concert":
-        //         return new BackstageQualityUpdaterStrategy();
-        //     default:
-        //         return new NormalQualityUpdaterStrategy();
-        // }
-
         public UpdateStrategy GetStrategy(Item item) {
 
             return item.Name switch

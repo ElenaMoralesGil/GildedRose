@@ -1,6 +1,6 @@
 namespace GildedRose.Console.QualityUpdaters; 
 
-public class BackstageQualityUpdater : UpdateStrategy{
+public class BackstageQualityUpdaterStrategy : UpdateStrategy{
 
     public int Update(Item item){
         if(item.SellIn <= 0) return 0;

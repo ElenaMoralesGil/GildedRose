@@ -13,11 +13,11 @@ public class QualityUpdater{
 
         switch(item.Name) {
             case "Aged Brie":
-                return new AgedBrieQualityUpdater();     
+                return new AgedBrieQualityUpdaterStrategy();     
             case "Backstage passes to a TAFKAL80ETC concert":
-                return new BackstageQualityUpdater();
+                return new BackstageQualityUpdaterStrategy();
             default:
-                return new NormalQualityUpdater();
+                return new NormalQualityUpdaterStrategy();
         }
 
     }

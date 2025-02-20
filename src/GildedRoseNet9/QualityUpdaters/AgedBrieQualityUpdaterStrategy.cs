@@ -1,7 +1,7 @@
 
 namespace GildedRose.Console.QualityUpdaters; 
 
-public class AgedBrieQualityUpdater : UpdateStrategy{
+public class AgedBrieQualityUpdaterStrategy : UpdateStrategy{
 
 
     public int Update(Item item){

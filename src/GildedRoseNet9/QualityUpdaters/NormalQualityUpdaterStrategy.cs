@@ -1,6 +1,6 @@
 namespace GildedRose.Console.QualityUpdaters; 
 
-public class NormalQualityUpdater : UpdateStrategy{
+public class NormalQualityUpdaterStrategy : UpdateStrategy{
 
     public int Update(Item item){
         if (item.Quality > 0 ) item.Quality--;

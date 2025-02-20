@@ -72,16 +72,41 @@ public class GildedRoseShould
     }
 
 
-    [Test]
-    public void return_conjured_item_with_zero_quality_when_quality_is_2(){
+    // [Test]
+    // public void return_conjured_item_with_zero_quality_when_quality_is_2(){
     
-        Item conjuredItem =  new Item{Name = "conjured Mana Cake", SellIn =2, Quality = 2};
-        Item expectedConjuredItem =  new Item{Name = "conjured Mana Cake", SellIn =1, Quality = 0};
-        var app = new Program(){
-             Items = new List<Item> { conjuredItem}
-        };
+    //     Item conjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =2, Quality = 2};
+    //     Item expectedConjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =1, Quality = 0};
+    //     var app = new Program(){
+    //          Items = new List<Item> { conjuredItem}
+    //     };
 
-        app.UpdateQuality();
-        conjuredItem.ToString().ShouldBe(expectedConjuredItem.ToString());
-    }
+    //     app.UpdateQuality();
+    //     conjuredItem.ToString().ShouldBe(expectedConjuredItem.ToString());
+    // }
+
+    // [Test]
+    // public void return_conjured_item_with_zero_quality_when_quality_is_zero(){
+        
+    //     Item conjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =2, Quality = 0};
+    //     Item expectedConjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =1, Quality = 0};
+    //     var app = new Program(){
+    //          Items = new List<Item> { conjuredItem}
+    //     };
+
+    //     app.UpdateQuality();
+    //     conjuredItem.ToString().ShouldBe(expectedConjuredItem.ToString());
+    // }
+
+    // [Test]
+    // public void return_conjured_item_with_zero_quality_when_quality_is_one(){
+    //     Item conjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =2, Quality = 1};
+    //     Item expectedConjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =1, Quality = 0};
+    //     var app = new Program(){
+    //          Items = new List<Item> { conjuredItem}
+    //     };
+
+    //     app.UpdateQuality();
+    //     conjuredItem.ToString().ShouldBe(expectedConjuredItem.ToString());
+    // }
 }

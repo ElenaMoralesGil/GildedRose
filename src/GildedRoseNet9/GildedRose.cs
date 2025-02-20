@@ -4,6 +4,7 @@ namespace GildedRose.Console
 {
     public class Program
     {
+        public QualityUpdater qualityUpdater =  new QualityUpdater();
         public IList<Item> Items;
         public static void Main(string[] args)
         {
@@ -42,24 +43,32 @@ namespace GildedRose.Console
             return item.Quality;
         }
         
-        public void UpdateQuality()
-        {
-            foreach (Item item in Items)
-            {   
-                if(item.Name == "Sulfuras, Hand of Ragnaros") continue;
+        // public void UpdateQuality()
+        // {
+        //     foreach (Item item in Items)
+        //     {   
+        //         if(item.Name == "Sulfuras, Hand of Ragnaros") continue;
 
-                switch(item.Name) {
-                    case "Aged Brie":
-                        item.Quality = UpdateAgedBrieQuality(item);
-                        break;
-                    case "Backstage passes to a TAFKAL80ETC concert":
-                        item.Quality = UpdateBackStageQuality(item);
-                        break;
-                    default:
-                        item.Quality = UpdateNormalQuality(item);
-                        break;
-                }
-                item.SellIn = item.SellIn - 1;
+        //         switch(item.Name) {
+        //             case "Aged Brie":
+        //                 item.Quality = UpdateAgedBrieQuality(item);
+        //                 break;
+        //             case "Backstage passes to a TAFKAL80ETC concert":
+        //                 item.Quality = UpdateBackStageQuality(item);
+        //                 break;
+        //             default:
+        //                 item.Quality = UpdateNormalQuality(item);
+        //                 break;
+        //         }
+        //         item.SellIn = item.SellIn - 1;
+        //     }
+        // }
+
+        public void UpdateQuality(){
+            foreach(Item item in Items){
+                if(item.Name == "Sulfuras, Hand of Ragnaros") continue;
+                item.Quality = qualityUpdater.Update(item);
+                item.SellIn--;
             }
         }
     }

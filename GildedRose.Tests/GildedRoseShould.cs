@@ -7,7 +7,7 @@ using NUnit.Framework.Constraints;
 namespace GildedRose.Tests;
 
 [UseReporter(typeof(DiffReporter))]
-public class GildedRoseTests
+public class GildedRoseShould
 {
     [SetUp]
     public void Setup()
@@ -69,5 +69,19 @@ public class GildedRoseTests
             }
 
         Approvals.Verify(CurrentStatus);
+    }
+
+
+    [Test]
+    public void return_conjured_item_with_zero_quality_when_quality_is_2(){
+    
+        Item conjuredItem =  new Item{Name = "conjured Mana Cake", SellIn =2, Quality = 2};
+        Item expectedConjuredItem =  new Item{Name = "conjured Mana Cake", SellIn =1, Quality = 0};
+        var app = new Program(){
+             Items = new List<Item> { conjuredItem}
+        };
+
+        app.UpdateQuality();
+        conjuredItem.ToString().ShouldBe(expectedConjuredItem.ToString());
     }
 }

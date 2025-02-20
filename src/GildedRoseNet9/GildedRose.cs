@@ -4,19 +4,16 @@ namespace GildedRose.Console
 {
     public class Program
     {
-        public QualityUpdater qualityUpdater =  new QualityUpdater();
         public IList<Item> Items;
         public static void Main(string[] args)
         {
             System.Console.WriteLine("OMGHAI!");
         }
 
-
         public void UpdateQuality(){
-            foreach(Item item in Items){
-                if(item.Name == "Sulfuras, Hand of Ragnaros") continue;
-                item.Quality = qualityUpdater.Update(item);
-                item.SellIn--;
+            foreach (Item item in Items){
+                var InventoryUpdater = ItemFactory.Create(item);
+                InventoryUpdater.Update();
             }
         }
     }

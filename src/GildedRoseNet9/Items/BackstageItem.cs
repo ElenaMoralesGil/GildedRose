@@ -1,6 +1,9 @@
 namespace GildedRose.Console.Items;
 
 public class BackstageItem(Item item) : InventoryItem(item){
+
+    public int FirstMinDaysForTicketsQualityIncrease = 6;
+    public int SecondMinDaysForTicketsQualityIncrease = 11;
     public override void Update()
     {
         UpdateQuality();
@@ -9,7 +12,7 @@ public class BackstageItem(Item item) : InventoryItem(item){
 
     public override void UpdateQuality()
     {
-        if(item.SellIn <= 0) {
+        if(item.SellIn <= MinDaysForQualityChangeFaster) {
             item.Quality = NotLegendaryItemsMinQuality;
             return;
         }
@@ -18,9 +21,9 @@ public class BackstageItem(Item item) : InventoryItem(item){
 
         item.Quality++;
 
-        if (item.SellIn < 11 && item.Quality < NotLegendaryItemsMaxQuality) item.Quality++;
+        if (item.SellIn < FirstMinDaysForTicketsQualityIncrease && item.Quality < NotLegendaryItemsMaxQuality) item.Quality++;
 
-        if (item.SellIn < 6 && item.Quality < NotLegendaryItemsMaxQuality) item.Quality++;
+        if (item.SellIn < SecondMinDaysForTicketsQualityIncrease && item.Quality < NotLegendaryItemsMaxQuality) item.Quality++;
     }
 
     public override void UpdateSellIn() {

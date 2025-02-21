@@ -3,7 +3,7 @@ public abstract class  InventoryItem{
 
     public Item item;
     public int NotLegendaryItemsMaxQuality = 50;
-    public int NotLegendaryItemsMinQuality = 0;
+    public int NotLegendaryItemsMinQuality, MinDaysForQualityChangeFaster = 0;
 
     public InventoryItem(Item item) {
         this.item = item;

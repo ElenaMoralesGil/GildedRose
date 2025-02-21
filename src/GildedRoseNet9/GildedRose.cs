@@ -15,6 +15,7 @@ namespace GildedRose.Console
                 var InventoryItem = ItemFactory.Create(item);
                 InventoryItem.Update();
             }
+       
         }
     }
 

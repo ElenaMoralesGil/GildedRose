@@ -45,6 +45,8 @@ public class GildedRoseShould
                 new Item{Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -2, Quality = 3 },
                 new Item{Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -2, Quality = 60 },
                 new Item{Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -2, Quality = -1 },
+                new Item{Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 4, Quality = 49 },
+                new Item{Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 4, Quality = 60 },
                 new Item{Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 7, Quality = 30 },
                 new Item{Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 30 },
                 new Item{Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 10, Quality = 30 },

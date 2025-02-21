@@ -2,21 +2,17 @@ namespace GildedRose.Console.Items;
 
 public class BackstageItem : InventoryUpdater{
 
-    public Item Item { get;}
-
-    public BackstageItem(Item item){
-        this.Item = item;
-    }
+    public BackstageItem(Item item): base(item){ }
 
     public override void Update(){
-        if(Item.SellIn <= 0)Item.Quality = 0 ;
+        if(item.SellIn <= 0)item.Quality = 0 ;
 
-        if(Item.Quality  <50  && Item.SellIn > 0){
-            Item.Quality++;
-            if (Item.SellIn < 11 ) Item.Quality++;
+        if(item.Quality  <50  && item.SellIn > 0){
+            item.Quality++;
+            if (item.SellIn < 11 ) item.Quality++;
 
-            if (Item.SellIn < 6 )Item.Quality++;
+            if (item.SellIn < 6 )item.Quality++;
         }
-         Item.SellIn--;
+         item.SellIn--;
     }
 }

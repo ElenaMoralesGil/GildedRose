@@ -2,18 +2,14 @@ namespace GildedRose.Console.Items;
 
 public class NormalItem : InventoryUpdater{
 
-     public Item Item { get;}
-
-    public NormalItem(Item item){
-        this.Item = item;
-    }
+    public NormalItem(Item item) : base(item){}
 
     public override void Update(){
 
-        if (Item.Quality > 0 ) Item.Quality--;
+        if (item.Quality > 0 ) item.Quality--;
         
-        if (Item.SellIn <= 0) Item.Quality--;
-        Item.SellIn--;
+        if (item.SellIn <= 0) item.Quality--;
+        item.SellIn--;
     }
 
 }

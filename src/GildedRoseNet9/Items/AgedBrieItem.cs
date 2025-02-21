@@ -2,17 +2,15 @@ namespace GildedRose.Console.Items;
 
 public class AgedBrieItem : InventoryUpdater{
 
-    public Item Item { get;}
 
-    public AgedBrieItem(Item item){
-        this.Item = item;
+    public AgedBrieItem(Item item): base(item){
     }
 
     public override void Update(){
     
-        if (Item.Quality < 50) Item.Quality++;
+        if (item.Quality < 50) item.Quality++;
 
-        if (Item.SellIn <= 0 && Item.Quality < 50 ) Item.Quality++;
-        Item.SellIn--;
+        if (item.SellIn <= 0 && item.Quality < 50 ) item.Quality++;
+        item.SellIn--;
     }
 }

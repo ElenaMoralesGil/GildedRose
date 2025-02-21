@@ -12,8 +12,8 @@ namespace GildedRose.Console
 
         public void UpdateQuality(){
             foreach (Item item in Items){
-                var InventoryUpdater = ItemFactory.Create(item);
-                InventoryUpdater.Update();
+                var InventoryItem = ItemFactory.Create(item);
+                InventoryItem.Update();
             }
         }
     }

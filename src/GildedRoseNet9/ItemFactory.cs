@@ -2,7 +2,7 @@
 using GildedRose.Console.Items;
 namespace GildedRose.Console;
 public static class ItemFactory{
-    public static InventoryUpdater Create(Item item){
+    public static InventoryItem Create(Item item){
         return item.Name switch
 
             {

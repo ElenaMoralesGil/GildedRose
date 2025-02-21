@@ -1,9 +1,17 @@
 namespace GildedRose.Console.Items;
 
-public class SulfurasItem: InventoryUpdater{
-    public SulfurasItem(Item item) : base(item){ }
-
-    public override void Update(){
+public class SulfurasItem(Item item) : InventoryItem(item){
+    public override void Update()
+    {
+        UpdateQuality();
+        UpdateSellIn();
     }
 
+    public override void UpdateQuality()
+    {
+    }
+
+    public override void UpdateSellIn()
+    {
+    }
 }

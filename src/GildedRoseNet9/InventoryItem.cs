@@ -26,4 +26,12 @@ public abstract class  InventoryItem{
         return item.Quality < ItemsMaxQuality;
     }
 
+    public bool ItemHasReachedMinQuality() {
+        return item.Quality <= ItemsMinQuality;
+    }
+
+    public bool ItemHasExpired() {
+        return item.SellIn <= MinDaysUntilItemExpires;
+    }
+
 }

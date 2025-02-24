@@ -5,9 +5,9 @@ public class NormalItem(Item item) : InventoryItem(item){
 
     public override void UpdateQuality(){
 
-        if (item.Quality > ItemsMinQuality ) item.Quality--;
+        if (ItemHasReachedMinQuality() is false) item.Quality--;
         
-        if (item.SellIn <= MinDaysUntilItemExpires) item.Quality--;
+        if (ItemHasExpired()) item.Quality--;
         
     }
 }

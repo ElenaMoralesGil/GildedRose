@@ -6,6 +6,6 @@ public class AgedBrieItem(Item item) : InventoryItem(item){
     {
         if (ItemHasNotReachedMaxQuality()) item.Quality++;
 
-        if (item.SellIn <= MinDaysUntilItemExpires && ItemHasNotReachedMaxQuality()) item.Quality++;
+        if (ItemHasExpired() && ItemHasNotReachedMaxQuality()) item.Quality++;
     }
 }

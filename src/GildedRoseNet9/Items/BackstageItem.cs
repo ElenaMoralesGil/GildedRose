@@ -13,7 +13,7 @@ public class BackstageItem(Item item) : InventoryItem(item){
             return;
         }
 
-        if(item.Quality > ItemsMaxQuality) return;
+        if(ItemHasNotReachedMaxQuality() is false) return;
 
         item.Quality++;
 

@@ -163,7 +163,7 @@ public class GildedRoseShould
     [Test]
     public void return_conjured_item_quality_decreased_normally_when_sellIn_is_zero(){
         Item conjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =0, Quality = 10};
-        Item expectedConjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =-1, Quality = 8};
+        Item expectedConjuredItem =  new Item{Name = "Conjured Mana Cake", SellIn =-1, Quality = 6};
         var app = new Program(){
              Items = new List<Item> { conjuredItem}
         };

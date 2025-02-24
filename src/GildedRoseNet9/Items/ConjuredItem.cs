@@ -4,12 +4,12 @@ public class ConjuredItem(Item item) : InventoryItem(item){
    
 
     public override void UpdateQuality(){
-        if(item.Quality < NotLegendaryItemsMinQuality ) return;
+        if(item.Quality < ItemsMinQuality ) return;
 
-        if(item.SellIn >= MinDaysForQualityChangeFaster) item.Quality -= 2;
+        if(item.SellIn >= MinDaysUntilItemExpires) item.Quality -= 2;
 
-        if(item.SellIn < MinDaysForQualityChangeFaster) item.Quality -= 4;
+        if(item.SellIn < MinDaysUntilItemExpires) item.Quality -= 4;
 
-        if(item.Quality < NotLegendaryItemsMinQuality) item.Quality = NotLegendaryItemsMinQuality;
+        if(item.Quality < ItemsMinQuality) item.Quality = ItemsMinQuality;
     }
 }

@@ -8,17 +8,17 @@ public class BackstageItem(Item item) : InventoryItem(item){
 
     public override void UpdateQuality()
     {
-        if(item.SellIn <= MinDaysForQualityChangeFaster) {
-            item.Quality = NotLegendaryItemsMinQuality;
+        if(item.SellIn <= MinDaysUntilItemExpires) {
+            item.Quality = ItemsMinQuality;
             return;
         }
 
-        if(item.Quality > NotLegendaryItemsMaxQuality) return;
+        if(item.Quality > ItemsMaxQuality) return;
 
         item.Quality++;
 
-        if (item.SellIn < FirstMinDaysForTicketsQualityIncrease && item.Quality < NotLegendaryItemsMaxQuality) item.Quality++;
+        if (item.SellIn < FirstMinDaysForTicketsQualityIncrease && item.Quality < ItemsMaxQuality) item.Quality++;
 
-        if (item.SellIn < SecondMinDaysForTicketsQualityIncrease && item.Quality < NotLegendaryItemsMaxQuality) item.Quality++;
+        if (item.SellIn < SecondMinDaysForTicketsQualityIncrease && item.Quality < ItemsMaxQuality) item.Quality++;
     }
 }

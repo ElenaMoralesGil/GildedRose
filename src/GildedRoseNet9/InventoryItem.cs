@@ -14,9 +14,12 @@ public abstract class  InventoryItem{
         UpdateQuality();
         UpdateSellIn();
     }
-    
+
     public abstract void UpdateQuality();
 
-    public abstract void UpdateSellIn();
+    public virtual void UpdateSellIn()
+    {
+        item.SellIn--;
+    }
 
 }

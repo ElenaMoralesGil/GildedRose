@@ -21,8 +21,4 @@ public class BackstageItem(Item item) : InventoryItem(item){
 
         if (item.SellIn < SecondMinDaysForTicketsQualityIncrease && item.Quality < NotLegendaryItemsMaxQuality) item.Quality++;
     }
-
-    public override void UpdateSellIn() {
-        item.SellIn--;
-    }
 }

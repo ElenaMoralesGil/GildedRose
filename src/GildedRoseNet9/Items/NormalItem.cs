@@ -10,9 +10,4 @@ public class NormalItem(Item item) : InventoryItem(item){
         if (item.SellIn <= MinDaysForQualityChangeFaster) item.Quality--;
         
     }
-
-    public override void UpdateSellIn()
-    {
-        item.SellIn--;
-    }
 }

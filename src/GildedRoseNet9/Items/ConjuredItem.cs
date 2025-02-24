@@ -12,9 +12,4 @@ public class ConjuredItem(Item item) : InventoryItem(item){
 
         if(item.Quality < NotLegendaryItemsMinQuality) item.Quality = NotLegendaryItemsMinQuality;
     }
-
-    public override void UpdateSellIn()
-    {
-        item.SellIn--;
-    }
 }

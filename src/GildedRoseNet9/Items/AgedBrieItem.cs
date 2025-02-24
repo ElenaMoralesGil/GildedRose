@@ -8,9 +8,4 @@ public class AgedBrieItem(Item item) : InventoryItem(item){
 
         if (item.SellIn <= MinDaysForQualityChangeFaster && item.Quality < NotLegendaryItemsMaxQuality ) item.Quality++;
     }
-
-    public override void UpdateSellIn()
-    {
-        item.SellIn--;
-    }
 }

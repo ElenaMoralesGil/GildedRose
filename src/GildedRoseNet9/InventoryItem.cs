@@ -22,4 +22,8 @@ public abstract class  InventoryItem{
         item.SellIn--;
     }
 
+    public bool ItemHasNotReachedMaxQuality() {
+        return item.Quality < ItemsMaxQuality;
+    }
+
 }

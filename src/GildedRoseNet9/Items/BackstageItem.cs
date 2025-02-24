@@ -17,9 +17,9 @@ public class BackstageItem(Item item) : InventoryItem(item){
 
         item.Quality++;
 
-        if (IsEventClose() && item.Quality < ItemsMaxQuality) item.Quality++;
+        if (IsEventClose() && ItemHasNotReachedMaxQuality()) item.Quality++;
 
-        if (IsEventInminent() && item.Quality < ItemsMaxQuality) item.Quality++;
+        if (IsEventInminent() && ItemHasNotReachedMaxQuality()) item.Quality++;
     }
 
     public bool  EventHasPassed(){

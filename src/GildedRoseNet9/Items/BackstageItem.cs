@@ -2,13 +2,13 @@ namespace GildedRose.Console.Items;
 
 public class BackstageItem(Item item) : InventoryItem(item){
 
-    public int FirstMinDaysForTicketsQualityIncrease = 6;
-    public int SecondMinDaysForTicketsQualityIncrease = 11;
+    public int EventIsInminent= 6;
+    public int EventIsClose = 11;
     
 
     public override void UpdateQuality()
     {
-        if(item.SellIn <= MinDaysUntilItemExpires) {
+        if(EventHasPassed()) {
             item.Quality = ItemsMinQuality;
             return;
         }
@@ -17,8 +17,20 @@ public class BackstageItem(Item item) : InventoryItem(item){
 
         item.Quality++;
 
-        if (item.SellIn < FirstMinDaysForTicketsQualityIncrease && item.Quality < ItemsMaxQuality) item.Quality++;
+        if (IsEventClose() && item.Quality < ItemsMaxQuality) item.Quality++;
 
-        if (item.SellIn < SecondMinDaysForTicketsQualityIncrease && item.Quality < ItemsMaxQuality) item.Quality++;
+        if (IsEventInminent() && item.Quality < ItemsMaxQuality) item.Quality++;
+    }
+
+    public bool  EventHasPassed(){
+        return item.SellIn <= MinDaysUntilItemExpires;
+    }
+
+    public bool IsEventClose(){
+        return item.SellIn < EventIsClose;
+    }
+
+    public bool IsEventInminent(){
+        return item.SellIn < EventIsInminent;
     }
 }

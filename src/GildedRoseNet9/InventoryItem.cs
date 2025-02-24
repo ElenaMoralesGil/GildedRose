@@ -9,7 +9,12 @@ public abstract class  InventoryItem{
         this.item = item;
     }
 
-    public abstract void Update();
+    public void Update()
+    {
+        UpdateQuality();
+        UpdateSellIn();
+    }
+    
     public abstract void UpdateQuality();
 
     public abstract void UpdateSellIn();

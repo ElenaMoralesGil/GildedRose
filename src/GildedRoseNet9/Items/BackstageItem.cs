@@ -4,11 +4,7 @@ public class BackstageItem(Item item) : InventoryItem(item){
 
     public int FirstMinDaysForTicketsQualityIncrease = 6;
     public int SecondMinDaysForTicketsQualityIncrease = 11;
-    public override void Update()
-    {
-        UpdateQuality();
-        UpdateSellIn();
-    }
+    
 
     public override void UpdateQuality()
     {

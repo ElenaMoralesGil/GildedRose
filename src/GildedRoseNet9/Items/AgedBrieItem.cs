@@ -1,11 +1,7 @@
 namespace GildedRose.Console.Items;
 
 public class AgedBrieItem(Item item) : InventoryItem(item){
-    public override void Update(){
-        UpdateQuality();
-        UpdateSellIn();
-    }
-
+   
     public override void UpdateQuality()
     {
         if (item.Quality < NotLegendaryItemsMaxQuality) item.Quality++;
